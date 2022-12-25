@@ -1,23 +1,30 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
-  class cnpjs extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
+const Sequelize = require('sequelize');
+
+const sequelize = new Sequelize();
+
+const Cnpj = sequelize.define('cnpj', {
+  id: {
+    allowNull: false,
+    autoIncrement: true,
+    primaryKey: true,
+    type: Sequelize.INTEGER
+  },
+  cnpj: {
+    allowNull: false,
+    type: Sequelize.STRING
+  },
+  companyType: {
+    allowNull: false,
+    type: Sequelize.STRING
+  },
+  createdAt: {
+    allowNull: false,
+    type: Sequelize.DATE
+  },
+  updatedAt: {
+    allowNull: false,
+    type: Sequelize.DATE
   }
-  cnpjs.init({
-    id: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'cnpjs',
-  });
-  return cnpjs;
-};
+});
+
+module.exports = Cnpj;

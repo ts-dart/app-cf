@@ -1,4 +1,6 @@
 'use strict';
+const { Buyer } = require('../models');
+
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {

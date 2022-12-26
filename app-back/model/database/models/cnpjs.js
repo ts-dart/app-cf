@@ -27,4 +27,20 @@ const Cnpj = sequelize.define('cnpj', {
   }
 });
 
+Cnpj.associate = (models) => {
+  Cnpj.hasOne(models.Buyer, { foreignKey: 'cnpjId', as: 'buyers' });
+}
+
+Cnpj.associate = (models) => {
+  Cnpj.hasOne(models.Provider, { foreignKey: 'cnpjId', as: 'providers' });
+}
+
+Cnpj.associate = (models) => {
+  Cnpj.hasOne(models.Sponsor, { foreignKey: 'cnpjId', as: 'sponsors' });
+}
+
+Cnpj.associate = (models) => {
+  Cnpj.hasOne(models.Order, { foreignKey: 'cnpjId', as: 'orders' });
+}
+
 module.exports = Cnpj;

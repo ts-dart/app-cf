@@ -48,5 +48,9 @@ module.exports = (sequelize) => {
     timestamps: false,
   });
 
+  User.associate = (models) => {
+    User.hasOne(models.Order, { foreingKey: 'userId', as: 'users'  });
+  }
+
   return User;
 };

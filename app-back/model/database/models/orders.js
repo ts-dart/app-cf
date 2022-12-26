@@ -49,39 +49,19 @@ module.exports = (sequelize, DataTypes) => {
     },
     cnpjId: {
       type: DataTypes.INTEGER,
-      onUpdate: 'CASCADE',
-      onDelete: 'CASCADE',
-      references: {
-        model: 'cnpjs',
-        key: 'id',
-      },
+      foreignKey: true
     },
     userId: {
       type: DataTypes.INTEGER,
-      onUpdate: 'CASCADE',
-      onDelete: 'CASCADE',
-      references: {
-        model: 'users',
-        key: 'id',
-      },
+      foreignKey: true
     },
     buyerId: {
       type: DataTypes.INTEGER,
-      onUpdate: 'CASCADE',
-      onDelete: 'CASCADE',
-      references: {
-        model: 'buyers',
-        key: 'id',
-      },
+      foreignKey: true
     },
     providerId: {
       type: DataTypes.INTEGER,
-      onUpdate: 'CASCADE',
-      onDelete: 'CASCADE',
-      references: {
-        model: 'providers',
-        key: 'id',
-      },
+      foreignKey: true
     },
     orderStatusBuyer: {
       type: DataTypes.STRING,
@@ -105,6 +85,30 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'Order',
     tableName: 'orders',
   });
+
+  Order.associate = (models) => {
+    Order.belongsTo(models.Cnpj, { foreignKey: 'cnpjId', as: 'cnpj' });
+  }
+
+  Order.associate = (models) => {
+    Order.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
+  }
+
+  Order.associate = (models) => {
+    Order.belongsTo(models.Buyer, { foreignKey: 'buyerId', as: 'buyer' });
+  }
+
+  Order.associate = (models) => {
+    Order.belongsTo(models.Provider, { foreignKey: 'providerId', as: 'provider' });
+  }
+
+  Order.associate = (models) => {
+    Order.hasOne(models.Offer, { foreignKey: 'orderId', as: 'orders' });
+  }
+
+  Order.associate = (models) => {
+    Order.hasOne(models.Orderportion, { foreignKey: 'orderId', as: 'orders' });
+  }
 
   return Order;
 };

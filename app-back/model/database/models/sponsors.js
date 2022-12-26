@@ -82,6 +82,10 @@ module.exports = (sequelize) => {
       type: Sequelize.DATE,
       allowNull: false,
     },
+    cnpjId: {
+      type: Sequelize.INTEGER,
+      foreignKey: true
+    },
     email: {
       type: Sequelize.STRING,
     },
@@ -96,6 +100,10 @@ module.exports = (sequelize) => {
       as: 'cnpj',
     });
   };
+
+  Sponsor.associate = (models) => {
+    Sponsor.hasOne(models.Offer, { foreignKey: 'sponsorId', as: 'sponsors' });
+  }
 
   return Sponsor;
 };

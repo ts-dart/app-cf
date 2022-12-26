@@ -85,6 +85,10 @@ module.exports = (sequelize) => {
       type: Sequelize.DATE,
       allowNull: false,
     },
+    cnpjId: {
+      type: Sequelize.INTEGER,
+      foreignKey: true
+    },
     email: {
       type: Sequelize.STRING,
     },
@@ -99,6 +103,10 @@ module.exports = (sequelize) => {
       as: 'cnpj',
     });
   };
+
+  Provider.associate = (models) => {
+    Provider.hasOne(models.Order, { foreignKey: 'providerId', as: 'providers' });
+  }
 
   return Provider;
 };

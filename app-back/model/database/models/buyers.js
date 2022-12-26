@@ -77,12 +77,7 @@ const Buyer = sequelize.define('buyer', {
   },
   cnpjId: {
     type: Sequelize.INTEGER,
-    onUpdate: 'CASCADE',
-    onDelete: 'CASCADE',
-    references: {
-      model: 'cnpjs',
-      key: 'id'
-    }
+    foreignKey: true
   },
   confirm: {
     type: Sequelize.BOOLEAN,
@@ -93,6 +88,12 @@ const Buyer = sequelize.define('buyer', {
   }
 });
 
-Buyer.belongsTo(Cnpj, { foreignKey: 'cnpjId', as: 'cnpj' });
+Buyer.associate = (models) => {
+  Buyer.belongsTo(models.Cnpj, { foreignKey: 'cnpjId', as: 'cnpj' });
+}
+
+Buyer.associate = (models) => {
+  Buyer.hasOne(models.Order, { foreignKey: 'buyerId', as: 'buyers' });
+}
 
 module.exports = Buyer;

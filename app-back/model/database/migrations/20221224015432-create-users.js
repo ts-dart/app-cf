@@ -23,7 +23,7 @@ module.exports = {
       mobile: {
         type: Sequelize.STRING
       },
-      department: {
+      departament: {
         type: Sequelize.STRING
       },
       verificationCode: {

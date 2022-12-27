@@ -1,10 +1,7 @@
-const { Order } = require('../models');
-
 module.exports = {
-  up: async () => {
-    await Order.bulkCreate([
+  async up (queryInterface, _Sequelize) {
+    await queryInterface.bulkInsert('orders', [
       {
-        id: 1,
         orderNfId: '1605181324132',
         orderNumber: '18153',
         emissionDate: '2020-10-30T11:00:00-03:00',
@@ -21,7 +18,6 @@ module.exports = {
         orderStatusProvider: '0',
       },
       {
-        id: 2,
         orderNfId: '160518132413',
         orderNumber: '18157',
         emissionDate: '2020-11-04T15:32:35-02:00',
@@ -38,7 +34,6 @@ module.exports = {
         orderStatusProvider: '0',
       },
       {
-        id: 3,
         orderNfId: '1605181324130',
         orderNumber: '18184',
         emissionDate: '2020-11-10',
@@ -57,10 +52,7 @@ module.exports = {
     ]);
   },
 
-  down: async () => {
-    await Order.destroy({
-      where: {},
-      truncate: true,
-    });
-  },
+  async down (queryInterface, _Sequelize) {
+    await queryInterface.bulkDelete('orders', null, {});
+  }
 };

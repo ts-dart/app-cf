@@ -1,10 +1,7 @@
-const { Provider } = require('../models');
-
 module.exports = {
-  up: async () => {
-    await Provider.bulkCreate([
+  async up (queryInterface, _Sequelize) {
+    await queryInterface.bulkInsert('providers', [
       {
-        id: 1,
         name: 'CEDENTE 002',
         tradingName: 'CEDENTE 002 LTDA',
         cashforceTax: null,
@@ -36,7 +33,7 @@ module.exports = {
     ]);
   },
 
-  down: async () => {
-    await Provider.truncate();
-  },
+  async down (queryInterface, _Sequelize) {
+    await queryInterface.bulkDelete('providers', null, {});
+  }
 };

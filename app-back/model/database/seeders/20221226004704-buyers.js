@@ -1,13 +1,9 @@
 'use strict';
-const { Buyer } = require('../models');
-
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, _Sequelize) {
-    await queryInterface.bulkInsert('Buyer' ,[
+    await queryInterface.bulkInsert('buyers' ,[
       {
-        id: 1,
         name: 'SACADO 001',
         tradingName: 'SACADO 001 LTDA',
         cashforceTax: '0',
@@ -36,7 +32,7 @@ module.exports = {
     ], {});
   },
 
-  down: async () => {
-    await Buyer.truncate();
-  },
+  async down (queryInterface, _Sequelize) {
+    await queryInterface.bulkDelete('buyers', null, {});
+  }
 };

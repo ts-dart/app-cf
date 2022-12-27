@@ -1,10 +1,7 @@
-const { User } = require('../models');
-
 module.exports = {
-  up: async () => {
-    await User.bulkCreate([
+  async up (queryInterface, _Sequelize) {
+    await queryInterface.bulkInsert('users', [
       {
-        id: 1,
         name: 'ALLAN SOUZA',
         email: 'allan@cashforce.com.br',
         phoneNumber: null,
@@ -12,14 +9,14 @@ module.exports = {
         departament: null,
         verificationCode: '',
         emailChecked: 1,
-        createdAt: new Date('2020-10-01 21:31:37'),
-        updatedAt: new Date('2020-10-01 22:41:23'),
+        createdAt: '2020-10-01 21:31:37',
+        updatedAt: '2020-10-01 22:41:23',
         cashforceAdm: 1,
       },
     ]);
   },
 
-  down: async () => {
-    await User.truncate();
-  },
+  async down (queryInterface, _Sequelize) {
+    await queryInterface.bulkDelete('users', null, {});
+  }
 };

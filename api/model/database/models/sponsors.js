@@ -1,109 +1,98 @@
-const Sequelize = require('sequelize');
-
-module.exports = (sequelize) => {
-  const Sponsor = sequelize.define('Sponsor', {
+module.exports = (sequelize, DataTypes) => {
+  const sponsor = sequelize.define('sponsor', {
     id: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
     name: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     tradingName: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     cashforceTax: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     responsibleName: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     responsibleEmail: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     responsiblePosition: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     responsiblePhone: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     responsibleMobile: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     website: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     postalCode: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     address: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     number: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     complement: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     neighborhood: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     city: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     state: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     bank: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     bankAgency: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     account: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     phoneNumber: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     situation: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     situationDate: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     createdAt: {
-      type: Sequelize.DATE,
+      type: DataTypes.DATE,
       allowNull: false,
     },
     updatedAt: {
-      type: Sequelize.DATE,
+      type: DataTypes.DATE,
       allowNull: false,
     },
     cnpjId: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       foreignKey: true
     },
     email: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
-  }, {
-    tableName: 'sponsors',
-    timestamps: false,
-  });
+  }, {});
 
-  Sponsor.associate = (models) => {
-    Sponsor.belongsTo(models.Cnpj, {
-      foreignKey: 'cnpjId',
-      as: 'cnpj',
-    });
+  sponsor.associate = (models) => {
+    sponsor.belongsTo(models.cnpj, { foreignKey: 'cnpjId' });
+    sponsor.hasOne(models.offer, { foreignKey: 'sponsorId' });
   };
 
-  Sponsor.associate = (models) => {
-    Sponsor.hasOne(models.Offer, { foreignKey: 'sponsorId', as: 'sponsors' });
-  }
-
-  return Sponsor;
+  return sponsor;
 };

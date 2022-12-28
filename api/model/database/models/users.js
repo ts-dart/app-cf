@@ -1,56 +1,51 @@
-const Sequelize = require('sequelize');
-
-module.exports = (sequelize) => {
-  const User = sequelize.define('User', {
+module.exports = (sequelize, DataTypes) => {
+  const user = sequelize.define('user', {
     id: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
     name: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     email: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     phoneNumber: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     mobile: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     department: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     verificationCode: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     emailChecked: {
-      type: Sequelize.BOOLEAN,
+      type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
     createdAt: {
-      type: Sequelize.DATE,
+      type: DataTypes.DATE,
       allowNull: false,
     },
     updatedAt: {
-      type: Sequelize.DATE,
+      type: DataTypes.DATE,
       allowNull: false,
     },
     cashforceAdm: {
-      type: Sequelize.BOOLEAN,
+      type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
-  }, {
-    tableName: 'users',
-    timestamps: false,
-  });
+  }, {});
 
-  User.associate = (models) => {
-    User.hasOne(models.Order, { foreingKey: 'userId', as: 'users'  });
+  user.associate = (models) => {
+    user.hasOne(models.order, { foreingKey: 'userId' });
   }
 
-  return User;
+  return user;
 };

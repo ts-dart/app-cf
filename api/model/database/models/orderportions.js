@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Orderportions = sequelize.define('Orderportions', {
+  const orderportion = sequelize.define('orderportion', {
     id: {
       allowNull: false,
       autoIncrement: true,
@@ -34,15 +34,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       foreignKey: true
     },
-  }, {
-    sequelize,
-    modelName: 'Order',
-    tableName: 'orders',
-  });
+  }, {});
 
-  Orderportions.associate = (models) => {
-    Orderportions.belongsTo(models.Order, { foreignKey: 'orderId', as: 'order' });
+  orderportion.associate = (models) => {
+    orderportion.belongsTo(models.order, { foreignKey: 'orderId' });
   }
 
-  return Orderportions;
+  return orderportion;
 };

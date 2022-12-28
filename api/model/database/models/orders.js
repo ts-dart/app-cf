@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Order = sequelize.define('Order', {
+  const order = sequelize.define('order', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -80,35 +80,16 @@ module.exports = (sequelize, DataTypes) => {
     deliveryCtrc: {
       type: DataTypes.STRING,
     },
-  }, {
-    sequelize,
-    modelName: 'Order',
-    tableName: 'orders',
-  });
+  }, {});
 
-  Order.associate = (models) => {
-    Order.belongsTo(models.Cnpj, { foreignKey: 'cnpjId', as: 'cnpj' });
-  }
+  order.associate = (models) => {
+    order.belongsTo(models.cnpj, { foreignKey: 'cnpjId' });
+    order.belongsTo(models.user, { foreignKey: 'userId' });
+    order.belongsTo(models.buyer, { foreignKey: 'buyerId' });
+    order.belongsTo(models.provider, { foreignKey: 'providerId' });
+    order.hasOne(models.offer, { foreignKey: 'orderId' });
+    order.hasOne(models.orderportion, { foreignKey: 'orderId' });
+  };
 
-  Order.associate = (models) => {
-    Order.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
-  }
-
-  Order.associate = (models) => {
-    Order.belongsTo(models.Buyer, { foreignKey: 'buyerId', as: 'buyer' });
-  }
-
-  Order.associate = (models) => {
-    Order.belongsTo(models.Provider, { foreignKey: 'providerId', as: 'provider' });
-  }
-
-  Order.associate = (models) => {
-    Order.hasOne(models.Offer, { foreignKey: 'orderId', as: 'orders' });
-  }
-
-  Order.associate = (models) => {
-    Order.hasOne(models.Orderportion, { foreignKey: 'orderId', as: 'orders' });
-  }
-
-  return Order;
+  return order;
 };

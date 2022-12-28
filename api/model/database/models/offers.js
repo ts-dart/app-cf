@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Offer = sequelize.define('Offer', {
+  const offer = sequelize.define('offer', {
     id: {
       allowNull: false,
       autoIncrement: true,
@@ -56,19 +56,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       foreignKey: true
     }
-  }, {
-    sequelize,
-    modelName: 'Offer',
-    tableName: 'offers',
-  });
+  }, {});
 
-  Offer.associate = (models) => {
-    Offer.belongsTo(models.Order, { foreignKey: 'orderId', as: 'order' });
+  offer.associate = (models) => {
+    offer.belongsTo(models.order, { foreignKey: 'orderId' });
+    offer.belongsTo(models.sponsor, { foreignKey: 'sponsorId' });
   }
 
-  Offer.associate = (models) => {
-    Offer.belongsTo(models.Sponsor, { foreignKey: 'sponsorId', as: 'sponsor' });
-  }
-
-  return Offer
+  return offer;
 };

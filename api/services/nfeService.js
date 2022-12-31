@@ -10,7 +10,7 @@ async function read() {
 
     return orders.map((order) => {
         return {
-            notaFiscal: order.nNF,
+            notaFiscal: order.nNf,
             sacado: order.buyer.name,
             cedente: order.provider.name,
             emissao: formatDate(order.emissionDate),

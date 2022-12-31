@@ -3,6 +3,7 @@
   <AsideSidebar/>
   <main>
     <PageHeader/>
+    <ContentTable/>
   </main>
 </template>
 
@@ -10,6 +11,7 @@
 import AsideSidebar from './components/Aside.vue';
 import HeaderSystem from './components/Header.vue';
 import PageHeader from './components/PageHeader.vue';
+import ContentTable from './components/ContentTable';
 
 export default {
   name: 'App',
@@ -17,6 +19,7 @@ export default {
     AsideSidebar,
     HeaderSystem,
     PageHeader,
+    ContentTable,
   },
 };
 </script>

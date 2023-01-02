@@ -12,7 +12,7 @@ export default {
     header {
         background-color: #FFFFFF;
         border-bottom: solid 1px #DFE2EB;
-        height: 62px;
+        height: 60px;
         width: 1055px;
         position: absolute;
         top: 0px;

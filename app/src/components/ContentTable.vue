@@ -7,7 +7,7 @@
                 </tr>
             </thead>
             <tbody>
-                {{genRows()}}
+                <!-- {{genRows()}} -->
                 <tr id="row-body" v-for="NF in NFs" :key="NF">
                     <td v-for="value in Object.values(NF)" :key="value">{{value}}</td>
                 </tr>
@@ -31,15 +31,16 @@
             const data = await response.json();
             this.indexes = Object.keys(data).length;
             this.NFs = data;
+            this.genRows();
         },
         methods: {
             genRows() {
-                let c = 207;
+                let c = 225;
                 for (let i = 0; i < this.indexes; i++) {
                     const div = document.createElement('div');
                     div.setAttribute('id', 'sty');
                     div.style.top = c+'px';
-                    c += 50
+                    c += 57;
 
                     const btn = document.createElement('button');
                     btn.innerHTML = 'Dados do cedente';
@@ -57,8 +58,7 @@
 <style>
     #sty {
         position: absolute;
-        top: 94px;
-        left: 340px;
+        left: 330px;
         border: 1px solid #DFE2EB;
         border-radius: 6px;
         height: 45px;
@@ -73,10 +73,17 @@
     }
     #row-body {
         height: 48px;
-        margin: 10px 0;
+        margin-top: 50px
+    }
+    #row-body :nth-last-child(-n+2) {
+        color: #00AD8C;
+        font-weight: 700;
+        font-size: 12px;
     }
     table {
         width: 70%;
+        border-collapse: separate;
+        border-spacing: 0 10px;
     }
     th {
         font-size: 12px;
@@ -87,7 +94,6 @@
         color: #4D5566;
         font-weight: 500;
         text-align: center;
-        width: 50px;
     }
     button {
         font-weight: 700;

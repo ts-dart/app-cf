@@ -65,6 +65,7 @@
         width: 970px;
         display: flex;
         justify-content: end;
+        align-items: center;
     }
     #content-table {
         margin-top: 20px;
@@ -75,7 +76,7 @@
         margin: 10px 0;
     }
     table {
-        width: 75%;
+        width: 70%;
     }
     th {
         font-size: 12px;
@@ -84,7 +85,7 @@
     td {
         font-size: 14px;
         color: #4D5566;
-        font-weight: 600;
+        font-weight: 500;
         text-align: center;
         width: 50px;
     }
@@ -93,5 +94,13 @@
         font-size: 12px;
         line-height: 16px;
         color: #727D94;
+        background-color: white;
+        margin-right: 10px;
+        border-radius: 30px;
+        border: 1px solid #DEE3FF;
+        height: 33px;
+        width: 170px;
+        padding: 10px;
+        line-height: 50%;
     }
 </style>

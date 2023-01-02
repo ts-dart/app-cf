@@ -39,6 +39,5 @@ export default {
     top: 115px;
     background-color: #FFFFFF;
     width: 1000px;
-    height: 215px;
   }
 </style>

@@ -21,7 +21,7 @@
 
         cat > .venv
 
-    Logo apos cole nesse mesmo terminal o código abaixo substituindo os valores por seus dados:
+Logo apos cole nesse mesmo terminal o código abaixo substituindo os valores por seus dados:
 
         DB_PASSWORD='digite a senha do seu banco de dados'
         HOSTNAME='digite o nome de usuário do seu banco de dados'

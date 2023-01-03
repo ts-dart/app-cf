@@ -50,3 +50,5 @@ espere ate aparecer no terminal a mensagem, 'online na porta 3000', apos a mensa
 
         npm run app
 </details>
+
+Apos terminar todos os passos, clique no link para acessar o app: [link](http://localhost:8080/)

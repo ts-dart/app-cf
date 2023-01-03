@@ -38,6 +38,8 @@ apos colar o código tecle enter depois ctrl + z para salvar e sair do editor
     Dentro do diretorio raiz, cole e execute o código abaixo:
 
         npm run api
+
+espere ate aparecer no terminal a mensagem, 'online na porta 3000', apos a mensagem aparecer abra uma outra aba do terminal e siga para o próximo passo
 </details>
 
 <details>

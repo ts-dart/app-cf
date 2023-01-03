@@ -1,6 +1,6 @@
 # Teste para a oportunidade de Fullstack Node/Vue.js Developer - Júnior
 
-## Orientações ℹ️
+### Orientações ℹ️
 
 <br>
 
@@ -10,7 +10,7 @@
     </summary>
     Tendo o git instalado abra o terminal, cole e execute o código abaixo:
 
-        git@github.com:ts-dart/app-cf.git
+        git clone git@github.com:ts-dart/app-cf.git
 </details>
 
 <details>

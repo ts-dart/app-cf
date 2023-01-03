@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "config:env": "(cd api && cat > .env)",
     "api": "(cd api && npm install && npm start)",
     "app": "(cd app && npm install && npm start)"
   },

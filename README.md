@@ -17,7 +17,7 @@
     <summary>
         <strong>Configure as variáveis de ambiente</strong>
     </summary>
-    No repositório local, no diretorio raiz, cole e execute o código abaixo:
+    No repositório local, no diretorio raiz '/app-cf', cole e execute o código abaixo:
 
         npm run config:env
 
@@ -35,7 +35,7 @@ apos colar o código tecle enter depois ctrl + z para salvar e sair do editor
     <summary>
         <strong>Iniciar API</strong>
     </summary>
-    Dentro do diretorio raiz, cole e execute o código abaixo:
+    Dentro do diretorio raiz '/app-cf', cole e execute o código abaixo:
 
         npm run api
 
@@ -46,7 +46,7 @@ espere ate aparecer no terminal a mensagem, 'online na porta 3000', apos a mensa
     <summary>
         <strong>Iniciar APP</strong>
     </summary>
-    Dentro do diretorio raiz, cole e execute o código abaixo:
+    Dentro do diretorio raiz '/app-cf', cole e execute o código abaixo:
 
         npm run app
 </details>

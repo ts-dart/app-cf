@@ -47,8 +47,6 @@
                     document.body.appendChild(div);
                     div.appendChild(btn);
                 }
-
-                console.log(this.indexes);
             }
         }
     }

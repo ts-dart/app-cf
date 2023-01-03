@@ -17,7 +17,11 @@
     <summary>
         <strong>Configure as variáveis de ambiente</strong>
     </summary>
-    Dentro do repositório local, dentro do diretório api, encontre o aquivo .venv e coloque suas informações.
+    No repositório local, no diretório api, cole e execute o código abaixo:
+
+        cat > .venv
+
+    Logo apos cole nesse mesmo terminal o código abaixo substituindo os valores por seus dados:
 
         DB_PASSWORD='digite a senha do seu banco de dados'
         HOSTNAME='digite o nome de usuário do seu banco de dados'

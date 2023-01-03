@@ -27,6 +27,8 @@ Logo apos cole nesse mesmo terminal o código abaixo substituindo os valores por
         HOSTNAME='digite o nome de usuário do seu banco de dados'
         DB_NAME='digite o nome do seu banco de dados'
         API_PORT='digite a para api'
+
+apos colar o código tecle ctrl + z para salvar e sair do editor
 </details>
 
 <details>

@@ -17,9 +17,9 @@
     <summary>
         <strong>Configure as variáveis de ambiente</strong>
     </summary>
-    No repositório local, no diretório api, cole e execute o código abaixo:
+    No repositório local, no diretorio raiz, cole e execute o código abaixo:
 
-        cat > .env
+        npm run config:env
 
 Logo apos cole nesse mesmo terminal o código abaixo substituindo os valores por seus dados:
 

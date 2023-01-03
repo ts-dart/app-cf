@@ -7,7 +7,7 @@ async function read() {
             { model: models.provider }
         ]
     });
-    console.log(orders);
+
     return orders.map((order) => {
         return {
             notaFiscal: order.nNf,
@@ -34,6 +34,7 @@ function formatValue(value) {
         style: 'currency',
         currency: 'BRL'
     });
+    
     return formatedValue;
 }
 

@@ -7,7 +7,6 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- {{genRows()}} -->
                 <tr id="row-body" v-for="NF in NFs" :key="NF">
                     <td v-for="value in Object.values(NF)" :key="value">{{value}}</td>
                 </tr>

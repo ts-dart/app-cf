@@ -19,7 +19,7 @@
     </summary>
     No repositório local, no diretório api, cole e execute o código abaixo:
 
-        cat > .venv
+        cat > .env
 
 Logo apos cole nesse mesmo terminal o código abaixo substituindo os valores por seus dados:
 

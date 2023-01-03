@@ -22,6 +22,7 @@
         npm run config:env
 
 Logo apos cole nesse mesmo terminal o código abaixo substituindo os valores por seus dados:
+_"Recomendo inserir seus dados em usando um editor de texot e colar no terminal"_
 
         DB_PASSWORD='digite a senha do seu banco de dados'
         HOSTNAME='digite o nome de usuário do seu banco de dados'

@@ -85,12 +85,13 @@
     th {
         font-size: 12px;
         color: #A1A8B8;
+        text-align: start;
     }
     td {
         font-size: 14px;
         color: #4D5566;
         font-weight: 500;
-        text-align: center;
+        text-align: start;
     }
     button {
         font-weight: 700;

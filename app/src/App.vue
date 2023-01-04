@@ -35,7 +35,7 @@ export default {
   }
   main {
     position: absolute;
-    left: 336px;
+    left: 355px;
     top: 115px;
     background-color: #FFFFFF;
     width: 1000px;
